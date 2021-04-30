@@ -43,34 +43,7 @@ module.exports = async function (context, req) {
     await page.waitForTimeout(timewait);
     const screenshotBuffer = await page.screenshot(options);
     await browser.close();
-
-    /*
-    const browser = await chromium.launch();
-    const browserContext = await browser.newContext();
-
-    const page = await browserContext.newPage();
-
-    await page.setViewportSize({
-        width: viewPortWidthVal,
-        height: viewPortHeightVal,
-    });
-    await page.goto(urlhtml);
-    await page.waitForTimeout(timewait);
-  
-    const options = {
-        fullPage: false,
-        clip: {
-          x: 5,
-          y: 60,
-          width: 240,
-          height: 40
-        }
-    };
-
-    await browser.close();
-    */
-
-
+    
     context.log(functionLogName + ' has ended.');
     context.log("Time PST: " + (new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"})));
 

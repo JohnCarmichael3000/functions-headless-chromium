@@ -4,6 +4,7 @@ module.exports = async function (context, req) {
     
     const functionLogName = 'JC FNC getWebSiteFullHtml';
     context.log(functionLogName + ' has started.');
+    context.log("Time PST: " + (new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"})));
 
     const browser = await chromium.launch({});
     const browserContext = await browser.newContext({});
@@ -23,7 +24,8 @@ module.exports = async function (context, req) {
     await page.close();
     await browser.close();
 
-    context.log(functionLogName + ' has ended. Now returning content.');
+    context.log(functionLogName + ' has ended.');
+    context.log("Time PST: " + (new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"})));
 
     context.res = {
         body: pageContent
