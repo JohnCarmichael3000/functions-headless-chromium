@@ -2,7 +2,7 @@ const { chromium } = require("playwright-chromium");
 
 module.exports = async function (context, req) {
     
-    const functionLogName = 'JC Function1: ';
+    const functionLogName = 'JC FNC getWebSiteFullHtml';
     context.log(functionLogName + ' has started.');
 
     const browser = await chromium.launch({});
