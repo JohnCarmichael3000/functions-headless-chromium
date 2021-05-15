@@ -37,7 +37,8 @@ module.exports = async function (context, req) {
     };
 
     const browser = await chromium.launch();
-    const page = await browser.newPage()
+    const page = await browser.newPage();
+    await page.setDefaultNavigationTimeout(0); //exception is thrown (specifically the TimeoutError) after a page takes more than 30000ms (30 seconds) to load totally.
     await page.setViewportSize({ width: viewPortWidthVal, height: viewPortHeightVal });
     await page.goto(urlhtml);
     await page.waitForTimeout(timewait);
