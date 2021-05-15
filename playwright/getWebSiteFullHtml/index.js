@@ -14,6 +14,7 @@ module.exports = async function (context, req) {
 
     context.log('Function right before call to webpage: ' + urlhtml);
     const page = await browserContext.newPage();
+    await page.setDefaultNavigationTimeout(0); //exception is thrown (specifically the TimeoutError) after a page takes more than 30000ms (30 seconds) to load totally.
     await page.goto(urlhtml);
     await page.waitForTimeout(timewait);
     const pageContent = await page.content();
