@@ -8,8 +8,8 @@ module.exports = async function (context, req) {
 
     const urlhtml = req.query.urlhtml || "https://google.com/";
     const timewait = Number(req.query.timewait) * 1000 || 5;
-    const viewPortWidthVal = req.query.viewPortWidthVal || 1920;
-    const viewPortHeightVal = req.query.viewPortHeightVal || 1020;
+    const viewPortWidthVal = Number(req.query.viewPortWidthVal) || 1920;
+    const viewPortHeightVal = Number(req.query.viewPortHeightVal) || 1020;
     const xVal = req.query.xVal || 0;
     const yVal = req.query.yVal || 0;
     const widthVal = req.query.widthVal || 1920;
