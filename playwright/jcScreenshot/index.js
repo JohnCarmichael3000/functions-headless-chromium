@@ -26,6 +26,7 @@ module.exports = async function (context, req) {
 
     //easy way to get coordinates, run at full size then use https://www.image-map.net/ to get coordinates of a specific area
     //remember clip is looking for area width and height NOT the x2, y2 coordinates
+    //Oct 2021
     const options = {
         fullPage: false,
         clip: {
