@@ -1,5 +1,5 @@
 # functions-headless-chromium
-Using headless Chromium in Azure Functions
+John Carmichael Azure Functions using headless Chromium code extension
 
 Extended code to make:
 - an Azure nodeJS function using Playwright to download the entire content of a website. These days many websites are using Angular/React/etc to serve up content that is loaded up by JavaScript after the initial page load. Using wget/Invoke-WebRequest/etc only gets you the "stub starting HTML" and most of the web page content is not included in your request output stream.
